@@ -3,11 +3,59 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Melo Studio</title>
+    <title>El Cinquillo - Juego de cartas online | Melo Studio</title>
+    <meta
+      name="description"
+      content="Descarga El Cinquillo, el juego de cartas online de Melo Studio para Android. Juega partidas rápidas, crea salas online, compite en rankings y mejora tu progreso."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Melo Studio" />
+    <link rel="canonical" href="https://www.melostudio.es/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="El Cinquillo - Juego de cartas online" />
+    <meta
+      property="og:description"
+      content="Descarga El Cinquillo en Google Play y juega al clásico juego de cartas con partidas online, rankings y salas privadas."
+    />
+    <meta property="og:url" content="https://www.melostudio.es/" />
+    <meta property="og:image" content="https://www.melostudio.es/assets/games/el-cinquillo-hero.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" type="image/png" href="assets/logo.png" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "El Cinquillo",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Android",
+        "description": "El Cinquillo es un juego de cartas online para Android con partidas rápidas, salas online, rankings, puntuaciones y progreso de jugador.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Melo Studio",
+          "url": "https://www.melostudio.es/"
+        },
+        "url": "https://www.melostudio.es/",
+        "sameAs": "https://play.google.com/store/apps/details?id=com.rowair.elcinquillo",
+        "image": "https://www.melostudio.es/assets/games/el-cinquillo-hero.webp",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "url": "https://play.google.com/store/apps/details?id=com.rowair.elcinquillo"
+        }
+      }
+    </script>
     <style>
       :root {
         color-scheme: light;
+        --yellow: #ffd33d;
+        --orange: #ff7a00;
+        --deep-orange: #d94300;
+        --shadow: #5a2200;
+        --surface: rgba(92, 31, 0, 0.32);
+        --text: #ffffff;
+        --muted: rgba(255, 255, 255, 0.92);
+        --line: rgba(255, 255, 255, 0.44);
       }
 
       * {
@@ -16,41 +64,552 @@
 
       html,
       body {
-        height: 100%;
         margin: 0;
+        min-height: 100%;
       }
 
       body {
-        display: grid;
-        place-items: center;
         min-height: 100vh;
-        padding: 32px;
-        background: #ffffff;
+        background:
+          radial-gradient(circle at 50% 22%, rgba(255, 255, 255, 0.28), transparent 24rem),
+          radial-gradient(circle at 50% 72%, rgba(90, 34, 0, 0.50), transparent 44rem),
+          radial-gradient(circle at 50% -10%, var(--yellow), var(--orange) 44%, var(--deep-orange) 100%);
+        color: var(--text);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        overflow-x: hidden;
       }
 
-      img {
-        display: block;
-        width: min(680px, 88vw);
-        height: auto;
+      body::before,
+      body::after {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        content: "";
+      }
+
+      body::before {
+        background:
+          radial-gradient(circle at 50% 72%, transparent 0 22%, rgba(255, 255, 255, 0.10) 22.2% 22.5%, transparent 22.8%),
+          radial-gradient(circle at 50% 72%, transparent 0 34%, rgba(255, 255, 255, 0.09) 34.2% 34.5%, transparent 34.8%),
+          radial-gradient(circle at 50% 72%, transparent 0 47%, rgba(255, 255, 255, 0.08) 47.2% 47.45%, transparent 47.8%);
+        opacity: 0.9;
+      }
+
+      body::after {
+        background-image:
+          linear-gradient(110deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+          linear-gradient(20deg, rgba(90, 34, 0, 0.07) 1px, transparent 1px);
+        background-size: 72px 72px, 96px 96px;
+        mask-image: radial-gradient(circle at 50% 42%, black, transparent 82%);
       }
 
       a {
-        position: fixed;
-        right: 24px;
-        bottom: 20px;
-        color: #6f747d;
-        font: 14px/1.4 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-          sans-serif;
-        text-decoration: none;
+        color: #ffffff;
+        text-underline-offset: 3px;
       }
 
-      a:hover {
-        color: #1f2937;
+      .page {
+        position: relative;
+        width: min(1020px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 32px 0;
+        z-index: 1;
+      }
+
+      .suit-marks {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        overflow: hidden;
+        color: rgba(255, 255, 255, 0.12);
+        font-family: Georgia, serif;
+        font-weight: 700;
+        z-index: 0;
+      }
+
+      .suit-marks span {
+        position: absolute;
+        line-height: 1;
+        text-shadow: 0 16px 28px rgba(90, 34, 0, 0.16);
+      }
+
+      .suit-marks span:nth-child(1) {
+        top: 11%;
+        left: 7%;
+        font-size: 7rem;
+        transform: rotate(-18deg);
+      }
+
+      .suit-marks span:nth-child(2) {
+        top: 18%;
+        right: 9%;
+        font-size: 5.8rem;
+        transform: rotate(16deg);
+      }
+
+      .suit-marks span:nth-child(3) {
+        bottom: 14%;
+        left: 12%;
+        font-size: 5.2rem;
+        transform: rotate(12deg);
+      }
+
+      .suit-marks span:nth-child(4) {
+        right: 11%;
+        bottom: 13%;
+        font-size: 7.4rem;
+        transform: rotate(-12deg);
+      }
+
+      .site-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 18px 0 28px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        min-width: 0;
+      }
+
+      .brand-logo {
+        display: grid;
+        place-items: center;
+        width: 84px;
+        height: 84px;
+        flex: 0 0 auto;
+        border: 1px solid rgba(255, 255, 255, 0.56);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.92);
+        box-shadow:
+          0 18px 34px rgba(90, 34, 0, 0.28),
+          inset 0 1px 0 rgba(255, 255, 255, 0.88);
+      }
+
+      .brand img {
+        display: block;
+        width: 68px;
+        height: auto;
+        filter: drop-shadow(0 5px 8px rgba(90, 34, 0, 0.20));
+      }
+
+      h1 {
+        margin: 0;
+        color: #ffffff;
+        font-size: clamp(2.2rem, 5.8vw, 4.2rem);
+        line-height: 0.95;
+        letter-spacing: 0;
+        text-shadow: 0 4px 0 rgba(90, 34, 0, 0.18), 0 12px 30px rgba(90, 34, 0, 0.42);
+      }
+
+      .tagline {
+        margin: 8px 0 0;
+        color: var(--muted);
+        font-size: 1.02rem;
+        font-weight: 650;
+        text-shadow: 0 3px 12px rgba(90, 34, 0, 0.34);
+      }
+
+      .tabs {
+        display: inline-flex;
+        gap: 7px;
+        padding: 7px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(92, 31, 0, 0.24);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(12px);
+      }
+
+      .tab {
+        min-width: 112px;
+        border: 0;
+        border-radius: 6px;
+        padding: 11px 16px;
+        background: transparent;
+        color: #ffffff;
+        cursor: pointer;
+        font: inherit;
+        font-weight: 750;
+      }
+
+      .tab[aria-selected="true"] {
+        background: #ffffff;
+        color: var(--deep-orange);
+        box-shadow: 0 12px 26px rgba(90, 34, 0, 0.18);
+      }
+
+      .panel {
+        display: none;
+        padding: 34px 0 24px;
+      }
+
+      .panel.active {
+        display: block;
+      }
+
+      .section-title {
+        margin: 0 0 18px;
+        color: #ffffff;
+        font-size: 1.48rem;
+        letter-spacing: 0;
+        text-shadow: 0 4px 14px rgba(90, 34, 0, 0.24);
+      }
+
+      .games-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 18px;
+      }
+
+      .game-card,
+      .contact-panel {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--surface);
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.22),
+          0 24px 60px rgba(90, 34, 0, 0.36);
+        backdrop-filter: blur(14px);
+      }
+
+      .game-card {
+        display: grid;
+        grid-template-columns: minmax(180px, 0.86fr) minmax(240px, 1.14fr);
+        gap: 22px;
+        align-items: center;
+        padding: 18px;
+      }
+
+      .contact-panel {
+        padding: 22px;
+      }
+
+      .game-art {
+        display: block;
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: contain;
+        filter: drop-shadow(0 24px 28px rgba(90, 34, 0, 0.28));
+      }
+
+      .game-content {
+        min-width: 0;
+      }
+
+      .game-card h3,
+      .contact-panel h3 {
+        margin: 0 0 10px;
+        color: #ffffff;
+        font-size: 1.22rem;
+        text-shadow: 0 3px 12px rgba(90, 34, 0, 0.28);
+      }
+
+      .game-card p,
+      .contact-panel p {
+        margin: 0 0 16px;
+        color: rgba(255, 255, 255, 0.94);
+        font-weight: 560;
+        line-height: 1.65;
+        text-shadow: 0 2px 10px rgba(90, 34, 0, 0.32);
+      }
+
+      .store-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 100%;
+        min-height: 42px;
+        border: 1px solid rgba(255, 255, 255, 0.68);
+        border-radius: 999px;
+        padding: 9px 16px;
+        background: #ffffff;
+        color: var(--deep-orange);
+        font-size: 0.94rem;
+        font-weight: 800;
+        text-decoration: none;
+        box-shadow: 0 14px 28px rgba(90, 34, 0, 0.24);
+      }
+
+      .store-link:hover {
+        transform: translateY(-1px);
+      }
+
+      .contact-list {
+        display: grid;
+        gap: 12px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .contact-list li {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        color: rgba(255, 255, 255, 0.92);
+        font-weight: 600;
+      }
+
+      .contact-list strong {
+        color: #ffffff;
+      }
+
+      .site-footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 14px;
+        margin-top: 28px;
+        padding-top: 22px;
+        border-top: 1px solid rgba(255, 255, 255, 0.34);
+        color: rgba(255, 255, 255, 0.86);
+        font-size: 0.94rem;
+        font-weight: 600;
+        text-shadow: 0 2px 8px rgba(90, 34, 0, 0.28);
+      }
+
+      @media (max-width: 680px) {
+        .page {
+          width: min(100% - 24px, 1020px);
+          padding-top: 20px;
+        }
+
+        .site-header {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .brand-logo {
+          width: 70px;
+          height: 70px;
+        }
+
+        .brand img {
+          width: 56px;
+        }
+
+        .tabs {
+          width: 100%;
+        }
+
+        .tab {
+          flex: 1;
+          min-width: 0;
+        }
+
+        .suit-marks span:nth-child(1),
+        .suit-marks span:nth-child(4) {
+          font-size: 4.8rem;
+        }
+
+        .game-card {
+          grid-template-columns: 1fr;
+          gap: 14px;
+          padding: 16px;
+        }
+
+        .game-art {
+          max-height: 240px;
+        }
+      }
+      @media (max-width: 420px) {
+        .page {
+          width: min(100% - 18px, 1020px);
+          padding-top: 14px;
+        }
+
+        .brand {
+          align-items: flex-start;
+          gap: 10px;
+        }
+
+        .brand-logo {
+          width: 58px;
+          height: 58px;
+        }
+
+        .brand img {
+          width: 46px;
+        }
+
+        h1 {
+          font-size: clamp(1.72rem, 11vw, 2.35rem);
+        }
+
+        .tagline {
+          font-size: 0.94rem;
+        }
+
+        .panel {
+          padding-top: 24px;
+        }
+
+        .section-title {
+          font-size: 1.25rem;
+        }
+
+        .game-card,
+        .contact-panel {
+          box-shadow:
+            inset 0 1px 0 rgba(255, 255, 255, 0.20),
+            0 16px 36px rgba(90, 34, 0, 0.30);
+        }
+
+        .game-card h3,
+        .contact-panel h3 {
+          font-size: 1.08rem;
+        }
+
+        .game-card p,
+        .contact-panel p {
+          font-size: 0.96rem;
+        }
+
+        .store-link {
+          width: 100%;
+          min-height: 46px;
+          text-align: center;
+        }
+
+        .site-footer {
+          align-items: flex-start;
+          flex-direction: column;
+        }
       }
     </style>
   </head>
   <body>
-    <img src="assets/logo.png" alt="Melo Studio" />
-    <a href="privacy/index.html">Privacy Policy</a>
+    <div class="suit-marks" aria-hidden="true">
+      <span>&diams;</span>
+      <span>&clubs;</span>
+      <span>&spades;</span>
+      <span>&hearts;</span>
+    </div>
+
+    <main class="page">
+      <header class="site-header">
+        <div class="brand">
+          <span class="brand-logo"><img src="assets/logo.png" alt="Melo Studio" /></span>
+          <div>
+            <h1>Melo Studio</h1>
+            <p class="tagline">Juegos de cartas online para competir y pasarlo bien.</p>
+          </div>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Secciones">
+          <button
+            class="tab"
+            id="tab-games"
+            type="button"
+            role="tab"
+            aria-controls="panel-games"
+            aria-selected="true"
+          >
+            Juegos
+          </button>
+          <button
+            class="tab"
+            id="tab-contact"
+            type="button"
+            role="tab"
+            aria-controls="panel-contact"
+            aria-selected="false"
+          >
+            Contacto
+          </button>
+        </div>
+      </header>
+
+      <section
+        class="panel active"
+        id="panel-games"
+        role="tabpanel"
+        aria-labelledby="tab-games"
+      >
+        <h2 class="section-title">Juegos</h2>
+        <div class="games-grid">
+          <article class="game-card">
+            <img
+              class="game-art"
+              src="assets/games/el-cinquillo-hero.webp"
+              alt="El Cinquillo"
+            />
+            <div class="game-content">
+              <h3>El Cinquillo: juego de cartas online</h3>
+              <p>
+                Descarga El Cinquillo para Android y disfruta del cl&aacute;sico juego de cartas en tu m&oacute;vil: partidas r&aacute;pidas,
+                salas online, rankings, puntuaciones y progreso de jugador.
+              </p>
+              <p>
+                Juega contra otros usuarios, mejora tu posici&oacute;n y lleva el juego
+                de cartas de siempre contigo.
+              </p>
+              <a
+                class="store-link"
+                href="https://play.google.com/store/apps/details?id=com.rowair.elcinquillo"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Desc&aacute;rgalo en Google Play
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="panel"
+        id="panel-contact"
+        role="tabpanel"
+        aria-labelledby="tab-contact"
+      >
+        <h2 class="section-title">Contacto</h2>
+        <div class="contact-panel">
+          <h3>Hablemos</h3>
+          <p>
+            Para soporte, privacidad, colaboraci&oacute;n o cualquier consulta sobre
+            Melo Studio, puedes escribirnos por email.
+          </p>
+          <ul class="contact-list">
+            <li>
+              <strong>Email:</strong>
+              <a href="mailto:info@melostudio.es">info@melostudio.es</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <span>&copy; 2026 Melo Studio</span>
+        <a href="privacy/index.html">Pol&iacute;tica de privacidad</a>
+      </footer>
+    </main>
+
+    <script>
+      const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
+      const panels = Array.from(document.querySelectorAll('[role="tabpanel"]'));
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          tabs.forEach((item) => {
+            item.setAttribute("aria-selected", String(item === tab));
+          });
+
+          panels.forEach((panel) => {
+            panel.classList.toggle(
+              "active",
+              panel.id === tab.getAttribute("aria-controls"),
+            );
+          });
+        });
+      });
+    </script>
   </body>
 </html>
