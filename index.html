@@ -3,19 +3,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>El Cinquillo - Juego de cartas online | Melo Studio</title>
+    <title>Juegos de cartas | Melo Studio</title>
     <meta
       name="description"
-      content="Descarga El Cinquillo, el juego de cartas online de Melo Studio para Android. Juega partidas rápidas, crea salas online, compite en rankings y mejora tu progreso."
+      content="Descubre los juegos de cartas de Melo Studio para Android: El Cinquillo, El Solitario, La Zanga, retos diarios y ranking competitivo."
     />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Melo Studio" />
     <link rel="canonical" href="https://www.melostudio.es/" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="El Cinquillo - Juego de cartas online" />
+    <meta property="og:title" content="Juegos de cartas | Melo Studio" />
     <meta
       property="og:description"
-      content="Descarga El Cinquillo en Google Play y juega al clásico juego de cartas con partidas online, rankings y salas privadas."
+      content="Descarga los juegos de cartas de Melo Studio para Android y disfruta de cl&aacute;sicos con retos, puntuaciones y ranking competitivo."
     />
     <meta property="og:url" content="https://www.melostudio.es/" />
     <meta property="og:image" content="https://www.melostudio.es/assets/games/el-cinquillo-hero.webp" />
@@ -24,17 +24,42 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "El Cinquillo",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://www.melostudio.es/#organization",
+            "name": "Melo Studio",
+            "url": "https://www.melostudio.es/",
+            "logo": "https://www.melostudio.es/assets/logo.png"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.melostudio.es/#website",
+            "name": "Melo Studio",
+            "url": "https://www.melostudio.es/",
+            "publisher": {
+              "@id": "https://www.melostudio.es/#organization"
+            },
+            "inLanguage": ["es", "en"]
+          },
+          {
+            "@type": "ItemList",
+            "@id": "https://www.melostudio.es/#games",
+            "name": "Juegos de cartas de Melo Studio",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                  "@type": "SoftwareApplication",
+                  "name": "El Cinquillo",
         "applicationCategory": "GameApplication",
         "operatingSystem": "Android",
         "description": "El Cinquillo es un juego de cartas online para Android con partidas rápidas, salas online, rankings, puntuaciones y progreso de jugador.",
         "publisher": {
-          "@type": "Organization",
-          "name": "Melo Studio",
-          "url": "https://www.melostudio.es/"
+          "@id": "https://www.melostudio.es/#organization"
         },
-        "url": "https://www.melostudio.es/",
+        "url": "https://play.google.com/store/apps/details?id=com.rowair.elcinquillo",
         "sameAs": "https://play.google.com/store/apps/details?id=com.rowair.elcinquillo",
         "image": "https://www.melostudio.es/assets/games/el-cinquillo-hero.webp",
         "offers": {
@@ -43,6 +68,49 @@
           "priceCurrency": "EUR",
           "url": "https://play.google.com/store/apps/details?id=com.rowair.elcinquillo"
         }
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                  "@type": "SoftwareApplication",
+                  "name": "El Solitario",
+                  "applicationCategory": "GameApplication",
+                  "operatingSystem": "Android",
+                  "description": "Juego de solitario para Android con retos, puntuaciones y ranking competitivo.",
+                  "publisher": {
+                    "@id": "https://www.melostudio.es/#organization"
+                  },
+                  "url": "https://play.google.com/store/apps/details?id=com.melostudio.elsolitario",
+                  "sameAs": "https://play.google.com/store/apps/details?id=com.melostudio.elsolitario",
+                  "image": "https://www.melostudio.es/assets/games/el-solitario-hero.png",
+                  "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "EUR",
+                    "url": "https://play.google.com/store/apps/details?id=com.melostudio.elsolitario"
+                  }
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                  "@type": "SoftwareApplication",
+                  "name": "La Zanga",
+                  "applicationCategory": "GameApplication",
+                  "operatingSystem": "Android",
+                  "description": "Juego de cartas en desarrollo por Melo Studio.",
+                  "publisher": {
+                    "@id": "https://www.melostudio.es/#organization"
+                  },
+                  "image": "https://www.melostudio.es/assets/games/la-zanga-hero.png"
+                }
+              }
+            ]
+          }
+        ]
       }
     </script>
     <style>
@@ -227,6 +295,48 @@
         backdrop-filter: blur(12px);
       }
 
+      .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .language-switch {
+        display: inline-flex;
+        align-items: center;
+        gap: 0;
+        order: 2;
+        color: rgba(255, 255, 255, 0.82);
+        font-size: 0.86rem;
+        font-weight: 800;
+        text-shadow: 0 2px 8px rgba(90, 34, 0, 0.28);
+      }
+
+      .language-option {
+        min-width: 0;
+        border: 0;
+        border-radius: 999px;
+        padding: 6px 8px;
+        background: transparent;
+        color: inherit;
+        cursor: pointer;
+        font: inherit;
+        font-weight: inherit;
+        opacity: 0.72;
+      }
+
+      .language-option[aria-pressed="true"] {
+        background: rgba(255, 255, 255, 0.92);
+        color: var(--deep-orange);
+        opacity: 1;
+        box-shadow: 0 8px 18px rgba(90, 34, 0, 0.16);
+        text-shadow: none;
+      }
+
+      .language-separator {
+        opacity: 0.54;
+      }
+
       .tab {
         min-width: 112px;
         border: 0;
@@ -264,7 +374,6 @@
 
       .games-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
         gap: 18px;
       }
 
@@ -291,12 +400,24 @@
         padding: 22px;
       }
 
+      .game-art-frame {
+        display: grid;
+        place-items: center;
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        border-radius: 8px;
+        background:
+          radial-gradient(circle at 50% 35%, rgba(255, 255, 255, 0.30), transparent 58%),
+          linear-gradient(180deg, rgba(255, 211, 61, 0.14), rgba(90, 34, 0, 0.12));
+        overflow: hidden;
+      }
+
       .game-art {
         display: block;
         width: 100%;
-        aspect-ratio: 4 / 3;
+        height: 100%;
         object-fit: contain;
-        filter: drop-shadow(0 24px 28px rgba(90, 34, 0, 0.28));
+        filter: saturate(0.96) contrast(1.04) drop-shadow(0 24px 28px rgba(90, 34, 0, 0.28));
       }
 
       .game-content {
@@ -339,6 +460,20 @@
 
       .store-link:hover {
         transform: translateY(-1px);
+      }
+
+      .status-badge {
+        display: inline-flex;
+        align-items: center;
+        min-height: 34px;
+        border: 1px solid rgba(255, 255, 255, 0.52);
+        border-radius: 999px;
+        padding: 7px 12px;
+        background: rgba(255, 255, 255, 0.14);
+        color: #ffffff;
+        font-size: 0.9rem;
+        font-weight: 800;
+        text-shadow: 0 2px 8px rgba(90, 34, 0, 0.26);
       }
 
       .contact-list {
@@ -415,7 +550,7 @@
           padding: 16px;
         }
 
-        .game-art {
+        .game-art-frame {
           max-height: 240px;
         }
       }
@@ -499,31 +634,55 @@
           <span class="brand-logo"><img src="assets/logo.png" alt="Melo Studio" /></span>
           <div>
             <h1>Melo Studio</h1>
-            <p class="tagline">Juegos de cartas online para competir y pasarlo bien.</p>
+            <p class="tagline" data-i18n="tagline">Juegos de cartas con retos, puntuaciones y ranking competitivo.</p>
           </div>
         </div>
 
-        <div class="tabs" role="tablist" aria-label="Secciones">
-          <button
-            class="tab"
-            id="tab-games"
-            type="button"
-            role="tab"
-            aria-controls="panel-games"
-            aria-selected="true"
-          >
-            Juegos
-          </button>
-          <button
-            class="tab"
-            id="tab-contact"
-            type="button"
-            role="tab"
-            aria-controls="panel-contact"
-            aria-selected="false"
-          >
-            Contacto
-          </button>
+        <div class="header-actions">
+          <div class="language-switch" aria-label="Idioma">
+            <button
+              class="language-option"
+              type="button"
+              data-lang="es"
+              aria-pressed="true"
+            >
+              ES
+            </button>
+            <span class="language-separator" aria-hidden="true">/</span>
+            <button
+              class="language-option"
+              type="button"
+              data-lang="en"
+              aria-pressed="false"
+            >
+              EN
+            </button>
+          </div>
+
+          <div class="tabs" role="tablist" aria-label="Secciones">
+            <button
+              class="tab"
+              id="tab-games"
+              type="button"
+              role="tab"
+              aria-controls="panel-games"
+              aria-selected="true"
+              data-i18n="tabs.games"
+            >
+              Juegos
+            </button>
+            <button
+              class="tab"
+              id="tab-contact"
+              type="button"
+              role="tab"
+              aria-controls="panel-contact"
+              aria-selected="false"
+              data-i18n="tabs.contact"
+            >
+              Contacto
+            </button>
+          </div>
         </div>
       </header>
 
@@ -533,23 +692,25 @@
         role="tabpanel"
         aria-labelledby="tab-games"
       >
-        <h2 class="section-title">Juegos</h2>
+        <h2 class="section-title" data-i18n="games.title">Juegos</h2>
         <div class="games-grid">
           <article class="game-card">
-            <img
-              class="game-art"
-              src="assets/games/el-cinquillo-hero.webp"
-              alt="El Cinquillo"
-            />
+            <div class="game-art-frame">
+              <img
+                class="game-art"
+                src="assets/games/el-cinquillo-hero.webp"
+                alt="El Cinquillo"
+              />
+            </div>
             <div class="game-content">
-              <h3>El Cinquillo: juego de cartas online</h3>
-              <p>
+              <h3 data-i18n="cinquillo.title">El Cinquillo: juego de cartas online</h3>
+              <p data-i18n="cinquillo.description">
                 Descarga El Cinquillo para Android y disfruta del cl&aacute;sico juego de cartas en tu m&oacute;vil: partidas r&aacute;pidas,
                 salas online, rankings, puntuaciones y progreso de jugador.
               </p>
-              <p>
-                Juega contra otros usuarios, mejora tu posici&oacute;n y lleva el juego
-                de cartas de siempre contigo.
+              <p data-i18n="cinquillo.competitive">
+                Juega contra otros usuarios, supera retos, mejora tu posici&oacute;n en
+                el ranking competitivo y lleva el juego de cartas de siempre contigo.
               </p>
               <a
                 class="store-link"
@@ -557,8 +718,58 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Desc&aacute;rgalo en Google Play
+                <span data-i18n="storeLink">Desc&aacute;rgalo en Google Play</span>
               </a>
+            </div>
+          </article>
+          <article class="game-card">
+            <div class="game-art-frame">
+              <img
+                class="game-art"
+                src="assets/games/el-solitario-hero.png"
+                alt="El Solitario"
+              />
+            </div>
+            <div class="game-content">
+              <h3 data-i18n="solitario.title">El Solitario: cartas para jugar a tu ritmo</h3>
+              <p data-i18n="solitario.description">
+                Rel&aacute;jate con una partida de solitario en tu m&oacute;vil, supera
+                retos, suma puntuaciones y disfruta de un cl&aacute;sico pensado para
+                jugar cuando quieras.
+              </p>
+              <p data-i18n="solitario.competitive">
+                Un juego sencillo, directo y perfecto para desconectar con una baraja
+                siempre a mano mientras compites en el ranking.
+              </p>
+              <a
+                class="store-link"
+                href="https://play.google.com/store/apps/details?id=com.melostudio.elsolitario"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span data-i18n="storeLink">Desc&aacute;rgalo en Google Play</span>
+              </a>
+            </div>
+          </article>
+          <article class="game-card">
+            <div class="game-art-frame">
+              <img
+                class="game-art"
+                src="assets/games/la-zanga-hero.png"
+                alt="La Zanga"
+              />
+            </div>
+            <div class="game-content">
+              <h3 data-i18n="zanga.title">La Zanga: juego de cartas en desarrollo</h3>
+              <p data-i18n="zanga.description">
+                Estamos preparando La Zanga para llevar otro cl&aacute;sico de cartas a
+                Android con partidas cuidadas, retos y progresi&oacute;n competitiva.
+              </p>
+              <p data-i18n="zanga.competitive">
+                El juego sigue en desarrollo, as&iacute; que iremos puliendo la
+                experiencia antes de publicarlo.
+              </p>
+              <span class="status-badge" data-i18n="inDevelopment">En desarrollo</span>
             </div>
           </article>
         </div>
@@ -570,16 +781,16 @@
         role="tabpanel"
         aria-labelledby="tab-contact"
       >
-        <h2 class="section-title">Contacto</h2>
+        <h2 class="section-title" data-i18n="contact.title">Contacto</h2>
         <div class="contact-panel">
-          <h3>Hablemos</h3>
-          <p>
+          <h3 data-i18n="contact.heading">Hablemos</h3>
+          <p data-i18n="contact.description">
             Para soporte, privacidad, colaboraci&oacute;n o cualquier consulta sobre
             Melo Studio, puedes escribirnos por email.
           </p>
           <ul class="contact-list">
             <li>
-              <strong>Email:</strong>
+              <strong data-i18n="contact.emailLabel">Email:</strong>
               <a href="mailto:info@melostudio.es">info@melostudio.es</a>
             </li>
           </ul>
@@ -588,13 +799,153 @@
 
       <footer class="site-footer">
         <span>&copy; 2026 Melo Studio</span>
-        <a href="privacy/">Pol&iacute;tica de privacidad</a>
+        <a href="privacy/index.html" data-i18n="footer.privacy">Pol&iacute;tica de privacidad</a>
       </footer>
     </main>
 
     <script>
+      const translations = {
+        es: {
+          pageTitle: "Juegos de cartas | Melo Studio",
+          metaDescription:
+            "Descubre los juegos de cartas de Melo Studio para Android: El Cinquillo, El Solitario, La Zanga, retos diarios y ranking competitivo.",
+          ogDescription:
+            "Descarga los juegos de cartas de Melo Studio para Android y disfruta de clasicos con retos, puntuaciones y ranking competitivo.",
+          tabListLabel: "Secciones",
+          languageLabel: "Idioma",
+          tagline: "Juegos de cartas con retos, puntuaciones y ranking competitivo.",
+          tabs: {
+            games: "Juegos",
+            contact: "Contacto",
+          },
+          games: {
+            title: "Juegos",
+          },
+          cinquillo: {
+            title: "El Cinquillo: juego de cartas online",
+            description:
+              "Descarga El Cinquillo para Android y disfruta del cl&aacute;sico juego de cartas en tu m&oacute;vil: partidas r&aacute;pidas, salas online, rankings, puntuaciones y progreso de jugador.",
+            competitive:
+              "Juega contra otros usuarios, supera retos, mejora tu posici&oacute;n en el ranking competitivo y lleva el juego de cartas de siempre contigo.",
+          },
+          solitario: {
+            title: "El Solitario: cartas para jugar a tu ritmo",
+            description:
+              "Rel&aacute;jate con una partida de solitario en tu m&oacute;vil, supera retos, suma puntuaciones y disfruta de un cl&aacute;sico pensado para jugar cuando quieras.",
+            competitive:
+              "Un juego sencillo, directo y perfecto para desconectar con una baraja siempre a mano mientras compites en el ranking.",
+          },
+          zanga: {
+            title: "La Zanga: juego de cartas en desarrollo",
+            description:
+              "Estamos preparando La Zanga para llevar otro cl&aacute;sico de cartas a Android con partidas cuidadas, retos y progresi&oacute;n competitiva.",
+            competitive:
+              "El juego sigue en desarrollo, as&iacute; que iremos puliendo la experiencia antes de publicarlo.",
+          },
+          storeLink: "Desc&aacute;rgalo en Google Play",
+          inDevelopment: "En desarrollo",
+          contact: {
+            title: "Contacto",
+            heading: "Hablemos",
+            description:
+              "Para soporte, privacidad, colaboraci&oacute;n o cualquier consulta sobre Melo Studio, puedes escribirnos por email.",
+            emailLabel: "Email:",
+          },
+          footer: {
+            privacy: "Pol&iacute;tica de privacidad",
+          },
+        },
+        en: {
+          pageTitle: "Card Games | Melo Studio",
+          metaDescription:
+            "Discover Melo Studio card games for Android: El Cinquillo, El Solitario, La Zanga, daily challenges and competitive rankings.",
+          ogDescription:
+            "Download Melo Studio card games for Android and enjoy classics with challenges, scores and competitive rankings.",
+          tabListLabel: "Sections",
+          languageLabel: "Language",
+          tagline: "Card games with challenges, scores and competitive rankings.",
+          tabs: {
+            games: "Games",
+            contact: "Contact",
+          },
+          games: {
+            title: "Games",
+          },
+          cinquillo: {
+            title: "El Cinquillo: online card game",
+            description:
+              "Download El Cinquillo for Android and enjoy the classic card game on your phone: quick matches, online rooms, rankings, scores and player progress.",
+            competitive:
+              "Play against other users, complete challenges, climb the competitive ranking and take a timeless card game with you.",
+          },
+          solitario: {
+            title: "El Solitario: cards at your own pace",
+            description:
+              "Relax with solitaire on your phone, complete challenges, collect scores and enjoy a classic made to play whenever you want.",
+            competitive:
+              "A simple, direct game that is perfect for unwinding with a deck always at hand while competing in the ranking.",
+          },
+          zanga: {
+            title: "La Zanga: card game in development",
+            description:
+              "We are preparing La Zanga to bring another card classic to Android with polished matches, challenges and competitive progression.",
+            competitive:
+              "The game is still in development, so we will keep refining the experience before release.",
+          },
+          storeLink: "Get it on Google Play",
+          inDevelopment: "In development",
+          contact: {
+            title: "Contact",
+            heading: "Let's Talk",
+            description:
+              "For support, privacy, collaboration or any question about Melo Studio, you can email us.",
+            emailLabel: "Email:",
+          },
+          footer: {
+            privacy: "Privacy Policy",
+          },
+        },
+      };
+
+      const getTranslation = (language, key) =>
+        key.split(".").reduce((value, part) => value?.[part], translations[language]);
+
+      const setMetaContent = (selector, content) => {
+        const meta = document.querySelector(selector);
+        if (meta) {
+          meta.setAttribute("content", content);
+        }
+      };
+
+      const setLanguage = (language) => {
+        const dictionary = translations[language] || translations.es;
+
+        document.documentElement.lang = language;
+        document.title = dictionary.pageTitle;
+        setMetaContent('meta[name="description"]', dictionary.metaDescription);
+        setMetaContent('meta[property="og:title"]', dictionary.pageTitle);
+        setMetaContent('meta[property="og:description"]', dictionary.ogDescription);
+
+        document.querySelector(".tabs")?.setAttribute("aria-label", dictionary.tabListLabel);
+        document.querySelector(".language-switch")?.setAttribute("aria-label", dictionary.languageLabel);
+
+        document.querySelectorAll("[data-i18n]").forEach((element) => {
+          const translation = getTranslation(language, element.dataset.i18n);
+          if (translation) {
+            element.innerHTML = translation;
+          }
+        });
+
+        document.querySelectorAll("[data-lang]").forEach((button) => {
+          button.setAttribute("aria-pressed", String(button.dataset.lang === language));
+        });
+
+        localStorage.setItem("melo-language", language);
+      };
+
       const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
       const panels = Array.from(document.querySelectorAll('[role="tabpanel"]'));
+      const languageButtons = Array.from(document.querySelectorAll("[data-lang]"));
 
       tabs.forEach((tab) => {
         tab.addEventListener("click", () => {
@@ -610,6 +961,14 @@
           });
         });
       });
+
+      languageButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          setLanguage(button.dataset.lang);
+        });
+      });
+
+      setLanguage(localStorage.getItem("melo-language") || "es");
     </script>
   </body>
 </html>
