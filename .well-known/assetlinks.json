@@ -1,0 +1,14 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.melostudio.lazanga",
+      "sha256_cert_fingerprints": [
+        "A5:17:44:82:30:E9:D4:B7:11:CB:7E:D4:D7:DA:5B:00:81:B5:85:E8:F6:58:66:B4:63:F0:60:8E:A2:FE:24:7B",
+        "DC:C0:6A:BD:4A:AD:D6:38:18:F2:28:8D:77:31:10:DE:99:5A:F6:74:91:48:D5:0B:09:06:E5:20:45:84:24:74",
+        "19:50:25:5D:D2:D1:2B:FB:DB:66:B3:F3:F8:D1:B6:99:93:0B:49:1E:35:78:46:98:98:F6:F3:07:C6:56:A6:BB"
+      ]
+    }
+  }
+]
