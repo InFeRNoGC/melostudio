@@ -6,7 +6,7 @@
     <title>Sala de La Zanga | Melo Studio</title>
     <meta
       name="description"
-      content="Invitacion a una sala privada de La Zanga."
+      content="Invitación a una sala privada de La Zanga."
     />
     <meta name="robots" content="noindex, follow" />
     <link rel="icon" type="image/png" href="/assets/logo.png" />
@@ -132,14 +132,14 @@
       <div class="actions">
         <a class="primary" id="open-app" href="/">
           Abrir la app
-          <span>Te llevara a la sala</span>
+          <span>Te llevará a la sala</span>
         </a>
-        <button id="copy-code" type="button">Copiar codigo</button>
+        <button id="copy-code" type="button">Copiar código</button>
         <a href="https://play.google.com/store/apps/details?id=com.melostudio.lazanga">
           Instalar desde Google Play
         </a>
       </div>
-      <p class="hint">Si la app no se abre, copia el codigo y entra desde Online &gt; Privada.</p>
+      <p class="hint">Si la app no se abre, copia el código y entra desde Online &gt; Privada.</p>
     </main>
     <script>
       const params = new URLSearchParams(window.location.search);
@@ -156,7 +156,7 @@
       copyButton.addEventListener("click", async () => {
         if (!code) return;
         await navigator.clipboard.writeText(code);
-        copyButton.textContent = "Codigo copiado";
+        copyButton.textContent = "Código copiado";
       });
     </script>
   </body>
