@@ -103,6 +103,14 @@
         padding: 14px 16px;
       }
 
+      a span {
+        display: block;
+        font-size: 0.82rem;
+        font-weight: 850;
+        opacity: 0.92;
+        margin-top: 3px;
+      }
+
       .primary {
         background: linear-gradient(135deg, #ffd33d, #ff8a00);
         color: #ffffff;
@@ -122,7 +130,10 @@
       <p>Te han invitado a una sala privada.</p>
       <div class="code" id="room-code">------</div>
       <div class="actions">
-        <a class="primary" id="open-app" href="/">Abrir la app</a>
+        <a class="primary" id="open-app" href="/">
+          Abrir la app
+          <span>Te llevara a la sala</span>
+        </a>
         <button id="copy-code" type="button">Copiar codigo</button>
         <a href="https://play.google.com/store/apps/details?id=com.melostudio.lazanga">
           Instalar desde Google Play
