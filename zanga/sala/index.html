@@ -139,7 +139,7 @@
 
       if (code) {
         codeLabel.textContent = code;
-        openApp.href = `${window.location.origin}/zanga/sala/?codigo=${encodeURIComponent(code)}`;
+        openApp.href = `com.melostudio.lazanga://room?codigo=${encodeURIComponent(code)}`;
       }
 
       copyButton.addEventListener("click", async () => {
