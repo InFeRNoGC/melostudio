@@ -127,7 +127,7 @@
     <main>
       <img src="/assets/logo.png" alt="Melo Studio" />
       <h1>La Zanga</h1>
-      <p>Te han invitado a una sala privada.</p>
+      <p id="invite-copy">Te han invitado a una sala privada.</p>
       <div class="code" id="room-code">------</div>
       <div class="actions">
         <a class="primary" id="open-app" href="/">
@@ -139,18 +139,31 @@
           Instalar desde Google Play
         </a>
       </div>
-      <p class="hint">Si la app no se abre, copia el código y entra desde Online &gt; Privada.</p>
+      <p class="hint" id="fallback-copy">Si la app no se abre, copia el código y entra desde Online &gt; Privada.</p>
     </main>
     <script>
       const params = new URLSearchParams(window.location.search);
       const code = (params.get("codigo") || "").trim().toUpperCase();
+      const roomType = (params.get("tipo") || "privada").trim().toLowerCase();
       const codeLabel = document.getElementById("room-code");
       const openApp = document.getElementById("open-app");
       const copyButton = document.getElementById("copy-code");
+      const inviteCopy = document.getElementById("invite-copy");
+      const fallbackCopy = document.getElementById("fallback-copy");
+      const isPublicRoom = roomType === "publica" || roomType === "public";
+
+      inviteCopy.textContent = isPublicRoom
+        ? "Te han invitado a una partida pública."
+        : "Te han invitado a una sala privada.";
+      fallbackCopy.textContent = isPublicRoom
+        ? "Si la app no se abre, copia el código y entra desde Online > Pública."
+        : "Si la app no se abre, copia el código y entra desde Online > Privada.";
 
       if (code) {
         codeLabel.textContent = code;
-        openApp.href = `com.melostudio.lazanga://room?codigo=${encodeURIComponent(code)}`;
+        openApp.href =
+          `com.melostudio.lazanga://room?codigo=${encodeURIComponent(code)}` +
+          `&tipo=${encodeURIComponent(roomType)}`;
       }
 
       copyButton.addEventListener("click", async () => {
