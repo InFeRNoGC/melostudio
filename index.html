@@ -6,7 +6,7 @@
     <title>Juegos de cartas | Melo Studio</title>
     <meta
       name="description"
-      content="Descubre los juegos de cartas de Melo Studio para Android: El Cinquillo, El Solitario, La Zanga, retos diarios y ranking competitivo."
+      content="Descubre los juegos de cartas de Melo Studio para Android: El Cinquillo, El Solitario, La Zanga, La Ronda, retos diarios y ranking competitivo."
     />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Melo Studio" />
@@ -101,11 +101,34 @@
                   "name": "La Zanga",
                   "applicationCategory": "GameApplication",
                   "operatingSystem": "Android",
+                  "description": "Juego de cartas para Android con partidas online, salas privadas y experiencia competitiva.",
+                  "publisher": {
+                    "@id": "https://www.melostudio.es/#organization"
+                  },
+                  "url": "https://play.google.com/store/apps/details?id=com.melostudio.lazanga",
+                  "sameAs": "https://play.google.com/store/apps/details?id=com.melostudio.lazanga",
+                  "image": "https://www.melostudio.es/assets/games/la-zanga-hero.png",
+                  "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "EUR",
+                    "url": "https://play.google.com/store/apps/details?id=com.melostudio.lazanga"
+                  }
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "item": {
+                  "@type": "SoftwareApplication",
+                  "name": "La Ronda",
+                  "applicationCategory": "GameApplication",
+                  "operatingSystem": "Android",
                   "description": "Juego de cartas en desarrollo por Melo Studio.",
                   "publisher": {
                     "@id": "https://www.melostudio.es/#organization"
                   },
-                  "image": "https://www.melostudio.es/assets/games/la-zanga-hero.png"
+                  "image": "https://www.melostudio.es/assets/games/main_menu_hero.png"
                 }
               }
             ]
@@ -760,16 +783,43 @@
               />
             </div>
             <div class="game-content">
-              <h3 data-i18n="zanga.title">La Zanga: juego de cartas en desarrollo</h3>
+              <h3 data-i18n="zanga.title">La Zanga: juego de cartas online</h3>
               <p data-i18n="zanga.description">
-                Estamos preparando La Zanga para llevar otro cl&aacute;sico de cartas a
-                Android con partidas cuidadas, retos y progresi&oacute;n competitiva.
+                Descarga La Zanga para Android y disfruta de partidas online,
+                salas privadas y una experiencia competitiva de cartas.
               </p>
               <p data-i18n="zanga.competitive">
-                El juego sigue en desarrollo, as&iacute; que iremos puliendo la
-                experiencia antes de publicarlo.
+                Invita a otros jugadores, entra en salas y lleva este cl&aacute;sico
+                contigo en el m&oacute;vil.
               </p>
-              <span class="status-badge" data-i18n="inDevelopment">En desarrollo</span>
+              <a
+                class="store-link"
+                href="https://play.google.com/store/apps/details?id=com.melostudio.lazanga"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span data-i18n="storeLink">Desc&aacute;rgalo en Google Play</span>
+              </a>
+            </div>
+          </article>
+          <article class="game-card">
+            <div class="game-art-frame">
+              <img
+                class="game-art"
+                src="assets/games/main_menu_hero.png"
+                alt="La Ronda"
+              />
+            </div>
+            <div class="game-content">
+              <h3 data-i18n="ronda.title">La Ronda: juego de cartas pr&oacute;ximamente</h3>
+              <p data-i18n="ronda.description">
+                Estamos preparando La Ronda para Android con partidas cuidadas,
+                retos y una experiencia pensada para jugar en cualquier momento.
+              </p>
+              <p data-i18n="ronda.competitive">
+                Pronto compartiremos m&aacute;s detalles sobre el lanzamiento.
+              </p>
+              <span class="status-badge" data-i18n="comingSoon">Pr&oacute;ximamente</span>
             </div>
           </article>
         </div>
@@ -808,7 +858,7 @@
         es: {
           pageTitle: "Juegos de cartas | Melo Studio",
           metaDescription:
-            "Descubre los juegos de cartas de Melo Studio para Android: El Cinquillo, El Solitario, La Zanga, retos diarios y ranking competitivo.",
+            "Descubre los juegos de cartas de Melo Studio para Android: El Cinquillo, El Solitario, La Zanga, La Ronda, retos diarios y ranking competitivo.",
           ogDescription:
             "Descarga los juegos de cartas de Melo Studio para Android y disfruta de clasicos con retos, puntuaciones y ranking competitivo.",
           tabListLabel: "Secciones",
@@ -836,14 +886,22 @@
               "Un juego sencillo, directo y perfecto para desconectar con una baraja siempre a mano mientras compites en el ranking.",
           },
           zanga: {
-            title: "La Zanga: juego de cartas en desarrollo",
+            title: "La Zanga: juego de cartas online",
             description:
-              "Estamos preparando La Zanga para llevar otro cl&aacute;sico de cartas a Android con partidas cuidadas, retos y progresi&oacute;n competitiva.",
+              "Descarga La Zanga para Android y disfruta de partidas online, salas privadas y una experiencia competitiva de cartas.",
             competitive:
-              "El juego sigue en desarrollo, as&iacute; que iremos puliendo la experiencia antes de publicarlo.",
+              "Invita a otros jugadores, entra en salas y lleva este cl&aacute;sico contigo en el m&oacute;vil.",
+          },
+          ronda: {
+            title: "La Ronda: juego de cartas pr&oacute;ximamente",
+            description:
+              "Estamos preparando La Ronda para Android con partidas cuidadas, retos y una experiencia pensada para jugar en cualquier momento.",
+            competitive:
+              "Pronto compartiremos m&aacute;s detalles sobre el lanzamiento.",
           },
           storeLink: "Desc&aacute;rgalo en Google Play",
           inDevelopment: "En desarrollo",
+          comingSoon: "Pr&oacute;ximamente",
           contact: {
             title: "Contacto",
             heading: "Hablemos",
@@ -858,7 +916,7 @@
         en: {
           pageTitle: "Card Games | Melo Studio",
           metaDescription:
-            "Discover Melo Studio card games for Android: El Cinquillo, El Solitario, La Zanga, daily challenges and competitive rankings.",
+            "Discover Melo Studio card games for Android: El Cinquillo, El Solitario, La Zanga, La Ronda, daily challenges and competitive rankings.",
           ogDescription:
             "Download Melo Studio card games for Android and enjoy classics with challenges, scores and competitive rankings.",
           tabListLabel: "Sections",
@@ -886,14 +944,22 @@
               "A simple, direct game that is perfect for unwinding with a deck always at hand while competing in the ranking.",
           },
           zanga: {
-            title: "La Zanga: card game in development",
+            title: "La Zanga: online card game",
             description:
-              "We are preparing La Zanga to bring another card classic to Android with polished matches, challenges and competitive progression.",
+              "Download La Zanga for Android and enjoy online matches, private rooms and a competitive card experience.",
             competitive:
-              "The game is still in development, so we will keep refining the experience before release.",
+              "Invite other players, join rooms and take this classic with you on your phone.",
+          },
+          ronda: {
+            title: "La Ronda: card game coming soon",
+            description:
+              "We are preparing La Ronda for Android with polished matches, challenges and an experience made to play anytime.",
+            competitive:
+              "We will share more launch details soon.",
           },
           storeLink: "Get it on Google Play",
           inDevelopment: "In development",
+          comingSoon: "Coming soon",
           contact: {
             title: "Contact",
             heading: "Let's Talk",
