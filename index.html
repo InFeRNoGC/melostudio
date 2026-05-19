@@ -6,7 +6,7 @@
     <title>Juegos de cartas | Melo Studio</title>
     <meta
       name="description"
-      content="Descubre los juegos de cartas de Melo Studio para Android: El Cinquillo, El Solitario, La Zanga, La Ronda, retos diarios y ranking competitivo."
+      content="Descubre los juegos de cartas de Melo Studio para Android, próximamente también en App Store: El Cinquillo, El Solitario, La Zanga y La Ronda."
     />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Melo Studio" />
@@ -447,6 +447,64 @@
         min-width: 0;
       }
 
+      .platform-actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .store-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        width: 178px;
+        min-height: 52px;
+        border: 1px solid rgba(255, 255, 255, 0.38);
+        border-radius: 8px;
+        padding: 8px 12px;
+        background: #111111;
+        color: #ffffff;
+        text-decoration: none;
+        box-shadow: 0 14px 28px rgba(90, 34, 0, 0.24);
+      }
+
+      .store-badge svg {
+        width: 27px;
+        height: 27px;
+        flex: 0 0 auto;
+        fill: currentColor;
+      }
+
+      .store-badge-text {
+        display: grid;
+        gap: 1px;
+        min-width: 0;
+        line-height: 1;
+      }
+
+      .store-badge-kicker {
+        font-size: 0.64rem;
+        font-weight: 750;
+        opacity: 0.82;
+      }
+
+      .store-badge-name {
+        font-size: 1.02rem;
+        font-weight: 900;
+        letter-spacing: 0;
+      }
+
+      .store-badge:hover {
+        transform: translateY(-1px);
+      }
+
+      .store-badge--soon {
+        cursor: default;
+        background: rgba(17, 17, 17, 0.66);
+        color: rgba(255, 255, 255, 0.88);
+      }
+
       .game-card h3,
       .contact-panel h3 {
         margin: 0 0 10px;
@@ -462,41 +520,6 @@
         font-weight: 560;
         line-height: 1.65;
         text-shadow: 0 2px 10px rgba(90, 34, 0, 0.32);
-      }
-
-      .store-link {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        max-width: 100%;
-        min-height: 42px;
-        border: 1px solid rgba(255, 255, 255, 0.68);
-        border-radius: 999px;
-        padding: 9px 16px;
-        background: #ffffff;
-        color: var(--deep-orange);
-        font-size: 0.94rem;
-        font-weight: 800;
-        text-decoration: none;
-        box-shadow: 0 14px 28px rgba(90, 34, 0, 0.24);
-      }
-
-      .store-link:hover {
-        transform: translateY(-1px);
-      }
-
-      .status-badge {
-        display: inline-flex;
-        align-items: center;
-        min-height: 34px;
-        border: 1px solid rgba(255, 255, 255, 0.52);
-        border-radius: 999px;
-        padding: 7px 12px;
-        background: rgba(255, 255, 255, 0.14);
-        color: #ffffff;
-        font-size: 0.9rem;
-        font-weight: 800;
-        text-shadow: 0 2px 8px rgba(90, 34, 0, 0.26);
       }
 
       .contact-list {
@@ -630,10 +653,14 @@
           font-size: 0.96rem;
         }
 
-        .store-link {
+        .store-badge {
           width: 100%;
           min-height: 46px;
-          text-align: center;
+        }
+
+        .platform-actions {
+          align-items: stretch;
+          flex-direction: column;
         }
 
         .site-footer {
@@ -735,14 +762,31 @@
                 Juega contra otros usuarios, supera retos, mejora tu posici&oacute;n en
                 el ranking competitivo y lleva el juego de cartas de siempre contigo.
               </p>
-              <a
-                class="store-link"
-                href="https://play.google.com/store/apps/details?id=com.rowair.elcinquillo"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span data-i18n="storeLink">Desc&aacute;rgalo en Google Play</span>
-              </a>
+              <div class="platform-actions">
+                <a
+                  class="store-badge"
+                  href="https://play.google.com/store/apps/details?id=com.rowair.elcinquillo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3.4 2.6c-.3.3-.4.8-.4 1.5v15.8c0 .7.1 1.2.4 1.5l9.2-9.4-9.2-9.4zm10.1 8.5 2.9-2.9L5.3 2.1l8.2 9zm2.9 4.7-2.9-2.9-8.2 9 11.1-6.1zm1.1-.6 3.1-1.7c.9-.5.9-1.5 0-2l-3.1-1.7-3.4 3.4 3.4 3.4z" />
+                  </svg>
+                  <span class="store-badge-text">
+                    <span class="store-badge-kicker" data-i18n="storeAvailable">Disponible en</span>
+                    <span class="store-badge-name" data-i18n="googlePlay">Google Play</span>
+                  </span>
+                </a>
+                <span class="store-badge store-badge--soon" aria-disabled="true">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M16.4 2.2c-.9.1-2 .7-2.6 1.5-.6.7-1 1.7-.9 2.6 1 .1 2-.5 2.7-1.3.7-.8 1-1.8.8-2.8zM20 17.3c-.4.9-.7 1.3-1.2 2.1-.8 1.2-1.9 2.7-3.2 2.7-1.2 0-1.5-.8-3.2-.8s-2 .8-3.2.8c-1.4.1-2.4-1.4-3.2-2.6-1.8-2.7-3.2-7.6-1.3-10.9.9-1.7 2.6-2.7 4.4-2.7 1.4 0 2.7.9 3.5.9.8 0 2.3-1.1 3.9-1 .7 0 2.7.3 4 2.1-.1.1-2.4 1.4-2.4 4.1 0 3.2 2.8 4.2 2.9 4.3z" />
+                  </svg>
+                  <span class="store-badge-text">
+                    <span class="store-badge-kicker" data-i18n="storeComingSoon">Pr&oacute;ximamente en</span>
+                    <span class="store-badge-name" data-i18n="appStore">App Store</span>
+                  </span>
+                </span>
+              </div>
             </div>
           </article>
           <article class="game-card">
@@ -764,14 +808,31 @@
                 Un juego sencillo, directo y perfecto para desconectar con una baraja
                 siempre a mano mientras compites en el ranking.
               </p>
-              <a
-                class="store-link"
-                href="https://play.google.com/store/apps/details?id=com.melostudio.elsolitario"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span data-i18n="storeLink">Desc&aacute;rgalo en Google Play</span>
-              </a>
+              <div class="platform-actions">
+                <a
+                  class="store-badge"
+                  href="https://play.google.com/store/apps/details?id=com.melostudio.elsolitario"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3.4 2.6c-.3.3-.4.8-.4 1.5v15.8c0 .7.1 1.2.4 1.5l9.2-9.4-9.2-9.4zm10.1 8.5 2.9-2.9L5.3 2.1l8.2 9zm2.9 4.7-2.9-2.9-8.2 9 11.1-6.1zm1.1-.6 3.1-1.7c.9-.5.9-1.5 0-2l-3.1-1.7-3.4 3.4 3.4 3.4z" />
+                  </svg>
+                  <span class="store-badge-text">
+                    <span class="store-badge-kicker" data-i18n="storeAvailable">Disponible en</span>
+                    <span class="store-badge-name" data-i18n="googlePlay">Google Play</span>
+                  </span>
+                </a>
+                <span class="store-badge store-badge--soon" aria-disabled="true">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M16.4 2.2c-.9.1-2 .7-2.6 1.5-.6.7-1 1.7-.9 2.6 1 .1 2-.5 2.7-1.3.7-.8 1-1.8.8-2.8zM20 17.3c-.4.9-.7 1.3-1.2 2.1-.8 1.2-1.9 2.7-3.2 2.7-1.2 0-1.5-.8-3.2-.8s-2 .8-3.2.8c-1.4.1-2.4-1.4-3.2-2.6-1.8-2.7-3.2-7.6-1.3-10.9.9-1.7 2.6-2.7 4.4-2.7 1.4 0 2.7.9 3.5.9.8 0 2.3-1.1 3.9-1 .7 0 2.7.3 4 2.1-.1.1-2.4 1.4-2.4 4.1 0 3.2 2.8 4.2 2.9 4.3z" />
+                  </svg>
+                  <span class="store-badge-text">
+                    <span class="store-badge-kicker" data-i18n="storeComingSoon">Pr&oacute;ximamente en</span>
+                    <span class="store-badge-name" data-i18n="appStore">App Store</span>
+                  </span>
+                </span>
+              </div>
             </div>
           </article>
           <article class="game-card">
@@ -792,14 +853,31 @@
                 Invita a otros jugadores, entra en salas y lleva este cl&aacute;sico
                 contigo en el m&oacute;vil.
               </p>
-              <a
-                class="store-link"
-                href="https://play.google.com/store/apps/details?id=com.melostudio.lazanga"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span data-i18n="storeLink">Desc&aacute;rgalo en Google Play</span>
-              </a>
+              <div class="platform-actions">
+                <a
+                  class="store-badge"
+                  href="https://play.google.com/store/apps/details?id=com.melostudio.lazanga"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3.4 2.6c-.3.3-.4.8-.4 1.5v15.8c0 .7.1 1.2.4 1.5l9.2-9.4-9.2-9.4zm10.1 8.5 2.9-2.9L5.3 2.1l8.2 9zm2.9 4.7-2.9-2.9-8.2 9 11.1-6.1zm1.1-.6 3.1-1.7c.9-.5.9-1.5 0-2l-3.1-1.7-3.4 3.4 3.4 3.4z" />
+                  </svg>
+                  <span class="store-badge-text">
+                    <span class="store-badge-kicker" data-i18n="storeAvailable">Disponible en</span>
+                    <span class="store-badge-name" data-i18n="googlePlay">Google Play</span>
+                  </span>
+                </a>
+                <span class="store-badge store-badge--soon" aria-disabled="true">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M16.4 2.2c-.9.1-2 .7-2.6 1.5-.6.7-1 1.7-.9 2.6 1 .1 2-.5 2.7-1.3.7-.8 1-1.8.8-2.8zM20 17.3c-.4.9-.7 1.3-1.2 2.1-.8 1.2-1.9 2.7-3.2 2.7-1.2 0-1.5-.8-3.2-.8s-2 .8-3.2.8c-1.4.1-2.4-1.4-3.2-2.6-1.8-2.7-3.2-7.6-1.3-10.9.9-1.7 2.6-2.7 4.4-2.7 1.4 0 2.7.9 3.5.9.8 0 2.3-1.1 3.9-1 .7 0 2.7.3 4 2.1-.1.1-2.4 1.4-2.4 4.1 0 3.2 2.8 4.2 2.9 4.3z" />
+                  </svg>
+                  <span class="store-badge-text">
+                    <span class="store-badge-kicker" data-i18n="storeComingSoon">Pr&oacute;ximamente en</span>
+                    <span class="store-badge-name" data-i18n="appStore">App Store</span>
+                  </span>
+                </span>
+              </div>
             </div>
           </article>
           <article class="game-card">
@@ -819,7 +897,26 @@
               <p data-i18n="ronda.competitive">
                 Pronto compartiremos m&aacute;s detalles sobre el lanzamiento.
               </p>
-              <span class="status-badge" data-i18n="comingSoon">Pr&oacute;ximamente</span>
+              <div class="platform-actions">
+                <span class="store-badge store-badge--soon" aria-disabled="true">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3.4 2.6c-.3.3-.4.8-.4 1.5v15.8c0 .7.1 1.2.4 1.5l9.2-9.4-9.2-9.4zm10.1 8.5 2.9-2.9L5.3 2.1l8.2 9zm2.9 4.7-2.9-2.9-8.2 9 11.1-6.1zm1.1-.6 3.1-1.7c.9-.5.9-1.5 0-2l-3.1-1.7-3.4 3.4 3.4 3.4z" />
+                  </svg>
+                  <span class="store-badge-text">
+                    <span class="store-badge-kicker" data-i18n="storeComingSoon">Pr&oacute;ximamente en</span>
+                    <span class="store-badge-name" data-i18n="googlePlay">Google Play</span>
+                  </span>
+                </span>
+                <span class="store-badge store-badge--soon" aria-disabled="true">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M16.4 2.2c-.9.1-2 .7-2.6 1.5-.6.7-1 1.7-.9 2.6 1 .1 2-.5 2.7-1.3.7-.8 1-1.8.8-2.8zM20 17.3c-.4.9-.7 1.3-1.2 2.1-.8 1.2-1.9 2.7-3.2 2.7-1.2 0-1.5-.8-3.2-.8s-2 .8-3.2.8c-1.4.1-2.4-1.4-3.2-2.6-1.8-2.7-3.2-7.6-1.3-10.9.9-1.7 2.6-2.7 4.4-2.7 1.4 0 2.7.9 3.5.9.8 0 2.3-1.1 3.9-1 .7 0 2.7.3 4 2.1-.1.1-2.4 1.4-2.4 4.1 0 3.2 2.8 4.2 2.9 4.3z" />
+                  </svg>
+                  <span class="store-badge-text">
+                    <span class="store-badge-kicker" data-i18n="storeComingSoon">Pr&oacute;ximamente en</span>
+                    <span class="store-badge-name" data-i18n="appStore">App Store</span>
+                  </span>
+                </span>
+              </div>
             </div>
           </article>
         </div>
@@ -858,9 +955,9 @@
         es: {
           pageTitle: "Juegos de cartas | Melo Studio",
           metaDescription:
-            "Descubre los juegos de cartas de Melo Studio para Android: El Cinquillo, El Solitario, La Zanga, La Ronda, retos diarios y ranking competitivo.",
+            "Descubre los juegos de cartas de Melo Studio para Android, próximamente también en App Store: El Cinquillo, El Solitario, La Zanga y La Ronda.",
           ogDescription:
-            "Descarga los juegos de cartas de Melo Studio para Android y disfruta de clasicos con retos, puntuaciones y ranking competitivo.",
+            "Descarga los juegos de cartas de Melo Studio para Android y disfruta de clásicos con retos, puntuaciones y ranking competitivo. Próximamente en App Store.",
           tabListLabel: "Secciones",
           languageLabel: "Idioma",
           tagline: "Juegos de cartas con retos, puntuaciones y ranking competitivo.",
@@ -899,9 +996,10 @@
             competitive:
               "Pronto compartiremos m&aacute;s detalles sobre el lanzamiento.",
           },
-          storeLink: "Desc&aacute;rgalo en Google Play",
-          inDevelopment: "En desarrollo",
-          comingSoon: "Pr&oacute;ximamente",
+          storeAvailable: "Disponible en",
+          storeComingSoon: "Pr&oacute;ximamente en",
+          googlePlay: "Google Play",
+          appStore: "App Store",
           contact: {
             title: "Contacto",
             heading: "Hablemos",
@@ -916,9 +1014,9 @@
         en: {
           pageTitle: "Card Games | Melo Studio",
           metaDescription:
-            "Discover Melo Studio card games for Android: El Cinquillo, El Solitario, La Zanga, La Ronda, daily challenges and competitive rankings.",
+            "Discover Melo Studio card games for Android, coming soon to the App Store too: El Cinquillo, El Solitario, La Zanga and La Ronda.",
           ogDescription:
-            "Download Melo Studio card games for Android and enjoy classics with challenges, scores and competitive rankings.",
+            "Download Melo Studio card games for Android and enjoy classics with challenges, scores and competitive rankings. Coming soon to the App Store.",
           tabListLabel: "Sections",
           languageLabel: "Language",
           tagline: "Card games with challenges, scores and competitive rankings.",
@@ -957,9 +1055,10 @@
             competitive:
               "We will share more launch details soon.",
           },
-          storeLink: "Get it on Google Play",
-          inDevelopment: "In development",
-          comingSoon: "Coming soon",
+          storeAvailable: "Available on",
+          storeComingSoon: "Coming soon to",
+          googlePlay: "Google Play",
+          appStore: "App Store",
           contact: {
             title: "Contact",
             heading: "Let's Talk",
