@@ -52,6 +52,11 @@
         height: auto;
       }
 
+      header .home-link {
+        display: inline-flex;
+        line-height: 0;
+      }
+
       h1 {
         margin: 0;
         font-size: clamp(2rem, 5vw, 3.25rem);
@@ -132,7 +137,9 @@
     <main>
       <article id="policy-es" class="hidden" lang="es">
         <header>
-          <img src="../assets/logo.png" alt="Melo Studio" />
+          <a class="home-link" href="../index.html" aria-label="Volver a la página principal">
+            <img src="../assets/logo.png" alt="Melo Studio" />
+          </a>
           <div>
             <h1>Política de privacidad</h1>
             <p class="updated">Última actualización: 1 de mayo de 2026</p>
@@ -326,7 +333,9 @@
 
       <article id="policy-en" lang="en">
         <header>
-          <img src="../assets/logo.png" alt="Melo Studio" />
+          <a class="home-link" href="../index.html" aria-label="Back to home page">
+            <img src="../assets/logo.png" alt="Melo Studio" />
+          </a>
           <div>
             <h1>Privacy Policy</h1>
             <p class="updated">Last updated: May 1, 2026</p>
