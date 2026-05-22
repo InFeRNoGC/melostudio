@@ -3,20 +3,20 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Juegos de cartas online para móvil | Melo Studio</title>
+    <title>Juegos de cartas online para móvil y tablet | Melo Studio</title>
     <meta
       name="description"
-      content="Melo Studio crea juegos de cartas online para móvil: El Cinquillo, La Zanga y El Solitario con partidas rápidas, salas privadas, retos y rankings."
+      content="Melo Studio crea juegos de cartas online para móvil y tablet: El Cinquillo, La Zanga, El Solitario, La Ronda y Subastado con partidas rápidas y rankings."
     />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Melo Studio" />
     <link rel="canonical" href="https://www.melostudio.es/" />
     <link rel="icon" type="image/png" href="assets/favicon.png" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Juegos de cartas online para móvil | Melo Studio" />
+    <meta property="og:title" content="Juegos de cartas online para móvil y tablet | Melo Studio" />
     <meta
       property="og:description"
-      content="Cinquillo, Zanga, Solitario y nuevos clásicos de cartas para móvil."
+      content="Cinquillo, Zanga, Solitario y nuevos clásicos de cartas para móvil y tablet."
     />
     <meta property="og:url" content="https://www.melostudio.es/" />
     <meta property="og:image" content="https://www.melostudio.es/assets/social/melo-studio-social.png" />
@@ -70,6 +70,12 @@
                 "position": 4,
                 "url": "https://www.melostudio.es/#la-ronda",
                 "name": "La Ronda"
+              },
+              {
+                "@type": "ListItem",
+                "position": 5,
+                "url": "https://www.melostudio.es/#subastado",
+                "name": "Subastado"
               }
             ]
           },
@@ -115,6 +121,14 @@
                 "acceptedAnswer": {
                   "@type": "Answer",
                   "text": "El Solitario consiste en ordenar la baraja en sus bases y vaciar las columnas. La web explica el modo por palos y el modo rojo y negro."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Cómo se juega a La Ronda?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "La Ronda se juega con baraja española de 40 cartas. Se reparten 3 cartas, se capturan cartas iguales y seguidas, se puede majar y la partida se gana llegando a 21 piedras."
                 }
               },
               {
@@ -407,6 +421,10 @@
         background: linear-gradient(135deg, #2b1600, #d94300);
       }
 
+      .game.subastado {
+        background: linear-gradient(135deg, #331200, #8f2b00 48%, #ff8a00);
+      }
+
       .game-content {
         max-width: 550px;
       }
@@ -568,6 +586,30 @@
         gap: 14px;
       }
 
+      .rules-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .rules-card {
+        border-top: 1px solid var(--line);
+        padding-top: 24px;
+      }
+
+      .rules-card strong {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 1.1rem;
+      }
+
+      .rules-card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.62;
+        font-weight: 620;
+      }
+
       .feature {
         border-top: 1px solid var(--line);
         padding-top: 24px;
@@ -699,6 +741,10 @@
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
+        .rules-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
         .game {
           min-height: 0;
         }
@@ -730,6 +776,10 @@
         }
 
         .feature-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .rules-grid {
           grid-template-columns: 1fr;
         }
 
@@ -784,7 +834,7 @@
       <section class="hero">
         <div class="hero-grid wrap">
           <div>
-            <p class="eyebrow">Juegos de cartas para móvil</p>
+            <p class="eyebrow">Juegos de cartas para móvil y tablet</p>
             <h1>Melo Studio</h1>
             <p class="hero-copy">
               Clásicos de cartas con partidas online, salas privadas, rankings y
@@ -821,7 +871,7 @@
               <h3>El Cinquillo</h3>
               <p>
                 Partidas rápidas, salas privadas, rankings y progreso de jugador
-                para disfrutar del clásico Cinquillo en el móvil.
+                para disfrutar del clásico Cinquillo en móvil y tablet.
               </p>
               <div class="game-actions">
                 <a class="button primary store-button" href="https://play.google.com/store/apps/details?id=com.rowair.elcinquillo&utm_source=melostudio&utm_medium=web&utm_campaign=cinquillo&utm_content=home" target="_blank" rel="noopener noreferrer" aria-label="Descargar El Cinquillo en Google Play">
@@ -844,7 +894,7 @@
               </div>
             </div>
             <div class="game-image" data-suit="5">
-              <img class="game-logo" src="assets/logos/cinquillo-logo.webp" alt="El Cinquillo para móvil" />
+              <img class="game-logo" src="assets/logos/cinquillo-logo.webp" alt="El Cinquillo para móvil y tablet" />
             </div>
           </article>
 
@@ -876,7 +926,7 @@
               </div>
             </div>
             <div class="game-image" data-suit="♣">
-              <img class="game-logo" src="assets/logos/zanga-logo.webp" alt="La Zanga para móvil" />
+              <img class="game-logo" src="assets/logos/zanga-logo.webp" alt="La Zanga para móvil y tablet" />
             </div>
           </article>
 
@@ -908,7 +958,7 @@
               </div>
             </div>
             <div class="game-image" data-suit="♦">
-              <img class="game-logo" src="assets/logos/solitario-logo.webp" alt="El Solitario para móvil" />
+              <img class="game-logo" src="assets/logos/solitario-logo.webp" alt="El Solitario para móvil y tablet" />
             </div>
           </article>
 
@@ -916,7 +966,7 @@
             <div class="game-content">
               <h3>La Ronda</h3>
               <p>
-                Estamos preparando La Ronda para móvil con partidas cuidadas,
+                Estamos preparando La Ronda para móvil y tablet con partidas cuidadas,
                 retos y una experiencia de cartas pensada para jugar en cualquier
                 momento.
               </p>
@@ -941,8 +991,95 @@
             </div>
             <div class="game-image" data-suit="♥">
               <span class="coming-soon">Próximamente</span>
-              <img class="game-logo" src="assets/logos/ronda-logo.webp" alt="La Ronda próximamente para móvil" />
+              <img class="game-logo" src="assets/logos/ronda-logo.webp" alt="La Ronda próximamente para móvil y tablet" />
             </div>
+          </article>
+
+          <article class="game subastado" id="subastado">
+            <div class="game-content">
+              <h3>Subastado</h3>
+              <p>
+                Próximo juego de cartas canario: subasta, triunfo, bazas y
+                estrategia para jugar solo contra otros dos jugadores.
+              </p>
+              <div class="game-actions">
+                <span class="button primary store-button disabled" aria-disabled="true">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path fill="#00d084" d="M4 2.7v18.6l9.7-9.3L4 2.7Z" />
+                    <path fill="#00a3ff" d="m5.2 2.1 11.2 6.4-2.7 3.5L5.2 2.1Z" />
+                    <path fill="#ffd33d" d="m13.7 12 2.7 3.5L5.2 21.9 13.7 12Z" />
+                    <path fill="#ff6b00" d="m16.4 8.5 3.2 1.8c1.1.6 1.1 2 0 2.7l-3.2 1.8-2.7-2.8 2.7-3.5Z" />
+                  </svg>
+                  <span><small>Google Play</small><strong>Próximamente</strong></span>
+                </span>
+                <span class="button store-button app-store disabled" aria-disabled="true">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path fill="currentColor" d="M16.1 12.6c0-2 1.6-3 1.7-3.1-1-.1-2 .5-2.5.5-.5 0-1.3-.5-2.1-.5-1.7 0-3.3 1.4-3.3 3.6 0 1.1.4 2.3 1 3.2.5.8 1.1 1.7 1.9 1.7.7 0 1-.5 2-.5.9 0 1.2.5 2 .5.8 0 1.3-.8 1.8-1.6.6-.9.8-1.7.8-1.8 0 0-1.3-.5-1.3-2Z" />
+                    <path fill="currentColor" d="M14.7 7.8c.4-.5.7-1.2.6-1.8-.6 0-1.3.4-1.7.9-.4.5-.7 1.1-.6 1.7.6.1 1.3-.3 1.7-.8Z" />
+                  </svg>
+                  <span><small>App Store</small><strong>Próximamente</strong></span>
+                </span>
+              </div>
+            </div>
+            <div class="game-image" data-suit="♠">
+              <span class="coming-soon">Próximamente</span>
+              <img class="game-logo" src="assets/logos/subastado-logo.webp" alt="Subastado próximamente para móvil y tablet" />
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section wrap" id="como-se-juega-la-ronda" aria-labelledby="ronda-rules-title">
+        <div class="section-title">
+          <h2 id="ronda-rules-title">Cómo se juega a La Ronda</h2>
+          <p>
+            La app de La Ronda usa baraja española de 40 cartas, capturas,
+            majos, cantos y piedras. La partida termina cuando un jugador o
+            equipo llega a 21 piedras.
+          </p>
+        </div>
+        <div class="rules-grid">
+          <article class="rules-card">
+            <strong>Objetivo</strong>
+            <p>
+              Gana quien llega primero a 21 piedras. En parejas se suman las
+              piedras de los dos compañeros.
+            </p>
+          </article>
+          <article class="rules-card">
+            <strong>Reparto</strong>
+            <p>
+              Se ponen 4 cartas descubiertas en la mesa y se reparten 3 cartas
+              a cada jugador. Cuando se acaban, se reparte otra ronda de 3.
+            </p>
+          </article>
+          <article class="rules-card">
+            <strong>Captura</strong>
+            <p>
+              Si tiras una carta igual a una de la mesa, la capturas y recoges
+              también las cartas seguidas disponibles.
+            </p>
+          </article>
+          <article class="rules-card">
+            <strong>Majar</strong>
+            <p>
+              Si el jugador anterior deja una carta en mesa, el siguiente puede
+              majarla con otra del mismo valor. No es obligatorio.
+            </p>
+          </article>
+          <article class="rules-card">
+            <strong>Cantos</strong>
+            <p>
+              Se revisan al inicio de cada ronda: Ronda, Caracol, Caracolillo y
+              Parranda. Si el canto es de reyes, suma una piedra extra.
+            </p>
+          </article>
+          <article class="rules-card">
+            <strong>Piedras</strong>
+            <p>
+              Ronda vale 1 piedra, Caracol 3, Caracolillo 4 y Parranda 5.
+              También suman la limpia, los majos y las cartas recogidas.
+            </p>
           </article>
         </div>
       </section>
@@ -969,7 +1106,7 @@
           </div>
           <div class="feature">
             <strong>Móvil primero</strong>
-            <p>Interfaz preparada para partidas cortas desde el móvil.</p>
+            <p>Interfaz preparada para partidas cortas desde móvil y tablet.</p>
           </div>
         </div>
       </section>
@@ -977,17 +1114,16 @@
       <section class="section seo" aria-labelledby="seo-title">
         <div class="seo-grid wrap">
           <div class="seo-panel">
-            <h2 id="seo-title">Juegos de cartas online para móvil</h2>
+            <h2 id="seo-title">Juegos de cartas online para móvil y tablet</h2>
             <p>
-              Si buscas juegos de cartas para móvil, Melo Studio desarrolla
-              clásicos como El Cinquillo, La Zanga y El Solitario con partidas
-              rápidas, rankings y salas privadas. La Ronda está en desarrollo y
-              llegará próximamente.
+              Si buscas juegos de cartas para móvil y tablet, Melo Studio desarrolla
+              clásicos como El Cinquillo, La Zanga, El Solitario, La Ronda y
+              Subastado con partidas rápidas, rankings y salas privadas.
             </p>
             <p>
               Cada juego tiene su página propia para explicar modos, funciones y
               descarga. Así es más fácil encontrar Cinquillo online, Zanga para
-              móvil, Solitario gratis y otros juegos de cartas.
+              móvil y tablet, Solitario gratis y otros juegos de cartas.
             </p>
             <div class="tags" aria-label="Búsquedas relacionadas">
               <span>juegos de cartas</span>
@@ -996,8 +1132,10 @@
               <span>valor de las cartas de la zanga</span>
               <span>cinquillo online</span>
               <span>zanga online</span>
-              <span>solitario móvil</span>
+              <span>solitario móvil y tablet</span>
+              <span>cómo se juega a la ronda</span>
               <span>la ronda cartas</span>
+              <span>subastado canario</span>
               <span>cartas gratis</span>
             </div>
           </div>
@@ -1039,8 +1177,16 @@
               </p>
             </article>
             <article>
+              <h3>&iquest;Cómo se juega a La Ronda?</h3>
+              <p>
+                Se juega capturando cartas iguales y seguidas, majando cuando
+                conviene y sumando piedras por cantos, limpias y cartas
+                recogidas. Gana quien llega a 21 piedras.
+              </p>
+            </article>
+            <article>
               <h3>&iquest;Habrá más juegos?</h3>
-              <p>La colección seguirá creciendo con nuevos clásicos de cartas.</p>
+              <p>La colección seguirá creciendo con La Ronda, Subastado y nuevos clásicos de cartas.</p>
             </article>
           </div>
         </div>
