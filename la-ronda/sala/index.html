@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="utf-8" />
@@ -6,7 +6,7 @@
     <title>Sala de La Ronda | Melo Studio</title>
     <meta
       name="description"
-      content="InvitaciÃ³n a una sala online de La Ronda."
+      content="Invitación a una sala online de La Ronda."
     />
     <meta name="robots" content="noindex, follow" />
     <link rel="icon" type="image/png" href="/assets/favicon.png" />
@@ -132,14 +132,14 @@
       <div class="actions">
         <a class="primary" id="open-app" href="/">
           Abrir la app
-          <span>Te llevarÃ¡ a la sala</span>
+          <span>Te llevará a la sala</span>
         </a>
-        <button id="copy-code" type="button">Copiar cÃ³digo</button>
+        <button id="copy-code" type="button">Copiar código</button>
         <a href="https://play.google.com/store/apps/details?id=com.melostudio.laronda">
           Instalar desde Google Play
         </a>
       </div>
-      <p class="hint" id="fallback-copy">Si la app no se abre, copia el cÃ³digo y entra desde Online &gt; Privada.</p>
+      <p class="hint" id="fallback-copy">Si la app no se abre, copia el código y entra desde Online &gt; Privada.</p>
     </main>
     <script>
       const params = new URLSearchParams(window.location.search);
@@ -153,11 +153,11 @@
       const isPublicRoom = roomType === "publica" || roomType === "public";
 
       inviteCopy.textContent = isPublicRoom
-        ? "Te han invitado a una partida pÃºblica."
+        ? "Te han invitado a una partida pública."
         : "Te han invitado a una sala privada.";
       fallbackCopy.textContent = isPublicRoom
-        ? "Si la app no se abre, copia el cÃ³digo y entra desde Online > PÃºblica."
-        : "Si la app no se abre, copia el cÃ³digo y entra desde Online > Privada.";
+        ? "Si la app no se abre, copia el código y entra desde Online > Pública."
+        : "Si la app no se abre, copia el código y entra desde Online > Privada.";
 
       if (code) {
         codeLabel.textContent = code;
@@ -169,7 +169,7 @@
       copyButton.addEventListener("click", async () => {
         if (!code) return;
         await navigator.clipboard.writeText(code);
-        copyButton.textContent = "CÃ³digo copiado";
+        copyButton.textContent = "Código copiado";
       });
     </script>
   </body>
