@@ -161,9 +161,20 @@
 
       if (code) {
         codeLabel.textContent = code;
-        openApp.href =
-          `com.melostudio.laronda://room?codigo=${encodeURIComponent(code)}` +
-          `&tipo=${encodeURIComponent(roomType)}`;
+        const encodedCode = encodeURIComponent(code);
+        const encodedRoomType = encodeURIComponent(roomType);
+        const playStoreUrl = "https://play.google.com/store/apps/details?id=com.melostudio.laronda";
+        const customSchemeUrl =
+          `com.melostudio.laronda://room?codigo=${encodedCode}` +
+          `&tipo=${encodedRoomType}`;
+        const androidIntentUrl =
+          `intent://room?codigo=${encodedCode}&tipo=${encodedRoomType}` +
+          `#Intent;scheme=com.melostudio.laronda;package=com.melostudio.laronda;` +
+          `S.browser_fallback_url=${encodeURIComponent(playStoreUrl)};end`;
+
+        openApp.href = /Android/i.test(navigator.userAgent)
+          ? androidIntentUrl
+          : customSchemeUrl;
       }
 
       copyButton.addEventListener("click", async () => {
