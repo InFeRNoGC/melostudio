@@ -8,6 +8,13 @@
           "/el-cinquillo/sala/*",
           "/el-cinquillo/sala/"
         ]
+      },
+      {
+        "appID": "6J25UY8898.com.melostudio.lazanga",
+        "paths": [
+          "/zanga/sala/*",
+          "/zanga/sala/"
+        ]
       }
     ]
   }
