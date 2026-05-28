@@ -15,6 +15,17 @@
           "/zanga/sala/*",
           "/zanga/sala/"
         ]
+      },
+      {
+        "appID": "6J25UY8898.com.melostudio.laronda",
+        "paths": [
+          "/ronda/sala/*",
+          "/ronda/sala/",
+          "/ronda/sala",
+          "/la-ronda/sala/*",
+          "/la-ronda/sala/",
+          "/la-ronda/sala"
+        ]
       }
     ]
   }
