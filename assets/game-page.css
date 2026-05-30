@@ -197,8 +197,17 @@ h1 {
 .actions {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 12px;
   margin-top: 28px;
+}
+
+.hero .actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(190px, max-content));
+  align-items: stretch;
+  width: fit-content;
+  max-width: 100%;
 }
 
 .button {
@@ -220,6 +229,15 @@ h1 {
   border-color: #ffffff;
   background: #ffffff;
   color: #050505;
+}
+
+.hero .actions .button:not(.store-button) {
+  grid-column: 1 / -1;
+  width: 100%;
+  border-color: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.92);
+  color: #050505;
+  box-shadow: 0 14px 32px rgba(74, 35, 7, 0.14);
 }
 
 .store-button {
@@ -571,6 +589,11 @@ ul {
   .actions {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .hero .actions {
+    grid-template-columns: 1fr;
+    width: 100%;
   }
 
   .hero {
