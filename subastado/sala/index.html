@@ -1,0 +1,197 @@
+﻿<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sala de Subastado | Melo Studio</title>
+    <meta
+      name="description"
+      content="Invitacion a una sala online de Subastado."
+    />
+    <meta name="robots" content="noindex, follow" />
+    <link rel="icon" type="image/png" href="/assets/favicon.png" />
+    <style>
+      :root {
+        color-scheme: light;
+        --green: #0f6b47;
+        --deep-green: #09442f;
+        --gold: #ffd33d;
+        --orange: #ff8a00;
+        --ink: #153d2b;
+        --muted: #376a52;
+        --surface: #fffaf0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+        background:
+          radial-gradient(circle at 50% 10%, rgba(255, 255, 255, 0.32), transparent 18rem),
+          radial-gradient(circle at 50% 92%, rgba(0, 0, 0, 0.34), transparent 34rem),
+          linear-gradient(145deg, var(--green), var(--deep-green));
+        color: var(--ink);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+      }
+
+      main {
+        width: min(440px, 100%);
+        padding: 24px;
+        border: 3px solid var(--gold);
+        border-radius: 14px;
+        background: var(--surface);
+        box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+        text-align: center;
+      }
+
+      img {
+        width: 112px;
+        height: 112px;
+        object-fit: contain;
+      }
+
+      h1 {
+        margin: 12px 0 8px;
+        font-size: 2rem;
+        line-height: 1.05;
+      }
+
+      p {
+        margin: 0 auto 18px;
+        color: var(--muted);
+        font-weight: 750;
+        line-height: 1.45;
+      }
+
+      .code {
+        width: 100%;
+        margin: 16px 0;
+        padding: 16px;
+        border: 2px dashed var(--orange);
+        border-radius: 10px;
+        background: #ffffff;
+        color: #123822;
+        font-size: 2.15rem;
+        font-weight: 950;
+        letter-spacing: 0.12em;
+      }
+
+      .actions {
+        display: grid;
+        gap: 10px;
+      }
+
+      a,
+      button {
+        display: block;
+        width: 100%;
+        min-height: 50px;
+        border: 0;
+        border-radius: 8px;
+        background: linear-gradient(135deg, #fffdf3, #ffdf7b);
+        color: #123822;
+        cursor: pointer;
+        font: inherit;
+        font-weight: 900;
+        text-decoration: none;
+        padding: 14px 16px;
+      }
+
+      a span {
+        display: block;
+        font-size: 0.82rem;
+        font-weight: 850;
+        opacity: 0.92;
+        margin-top: 3px;
+      }
+
+      .primary {
+        background: linear-gradient(135deg, var(--gold), var(--orange));
+        color: #ffffff;
+        text-shadow: 0 1px 2px rgba(21, 61, 43, 0.4);
+      }
+
+      .hint {
+        margin-top: 14px;
+        font-size: 0.92rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <img src="/assets/logos/subastado-logo.webp" alt="Subastado" />
+      <h1>Subastado</h1>
+      <p id="invite-copy">Te han invitado a una sala privada.</p>
+      <div class="code" id="room-code">-----</div>
+      <div class="actions">
+        <a class="primary" id="open-app" href="/">
+          Abrir la app
+          <span>Te llevara a la sala</span>
+        </a>
+        <button id="copy-code" type="button">Copiar codigo</button>
+        <a href="https://play.google.com/store/apps/details?id=com.melostudio.subastado">
+          Instalar desde Google Play
+        </a>
+      </div>
+      <p class="hint" id="fallback-copy">Si la app no se abre, copia el codigo y entra desde Online &gt; Privada.</p>
+    </main>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const code = (params.get("codigo") || params.get("code") || "")
+        .trim()
+        .toUpperCase()
+        .replace(/[^A-Z0-9]/g, "")
+        .slice(0, 5);
+      const roomType = (params.get("tipo") || "privada").trim().toLowerCase();
+      const codeLabel = document.getElementById("room-code");
+      const openApp = document.getElementById("open-app");
+      const copyButton = document.getElementById("copy-code");
+      const inviteCopy = document.getElementById("invite-copy");
+      const fallbackCopy = document.getElementById("fallback-copy");
+      const isPublicRoom = roomType === "publica" || roomType === "public";
+
+      inviteCopy.textContent = isPublicRoom
+        ? "Te han invitado a una partida publica."
+        : "Te han invitado a una sala privada.";
+      fallbackCopy.textContent = isPublicRoom
+        ? "Si la app no se abre, copia el codigo y entra desde Online > Publica."
+        : "Si la app no se abre, copia el codigo y entra desde Online > Privada.";
+
+      if (code.length === 5) {
+        codeLabel.textContent = code;
+        const encodedCode = encodeURIComponent(code);
+        const encodedRoomType = encodeURIComponent(roomType);
+        const playStoreUrl = "https://play.google.com/store/apps/details?id=com.melostudio.subastado";
+        const customSchemeUrl =
+          `com.melostudio.subastado://room?codigo=${encodedCode}` +
+          `&tipo=${encodedRoomType}`;
+        const androidIntentUrl =
+          `intent://room?codigo=${encodedCode}&tipo=${encodedRoomType}` +
+          `#Intent;scheme=com.melostudio.subastado;package=com.melostudio.subastado;` +
+          `S.browser_fallback_url=${encodeURIComponent(playStoreUrl)};end`;
+
+        openApp.href = /Android/i.test(navigator.userAgent)
+          ? androidIntentUrl
+          : customSchemeUrl;
+      } else {
+        codeLabel.textContent = "-----";
+        inviteCopy.textContent = "El enlace de invitacion no es valido.";
+        openApp.href = "https://www.melostudio.es/";
+      }
+
+      copyButton.addEventListener("click", async () => {
+        if (code.length !== 5) return;
+        await navigator.clipboard.writeText(code);
+        copyButton.textContent = "Codigo copiado";
+      });
+    </script>
+  </body>
+</html>
