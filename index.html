@@ -6,7 +6,7 @@
     <title>Juegos de cartas canarios y clásicos online | Melo Studio</title>
     <meta
       name="description"
-      content="Juegos de cartas canarios y clásicos para móvil y tablet: La Zanga, La Ronda, El Cinquillo y El Solitario con partidas rápidas y rankings. Subastado próximamente."
+      content="Juegos de cartas canarios y clásicos para móvil y tablet: La Zanga, La Ronda, Subastado, Envite, El Cinquillo y El Solitario con partidas rápidas y rankings."
     />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Melo Studio" />
@@ -16,7 +16,7 @@
     <meta property="og:title" content="Juegos de cartas canarios y clásicos online | Melo Studio" />
     <meta
       property="og:description"
-      content="Zanga, Ronda, Cinquillo, Solitario y nuevos juegos de cartas canarios y clásicos para móvil y tablet."
+      content="Zanga, Ronda, Subastado, Envite, Cinquillo, Solitario y juegos de cartas canarios y clásicos para móvil y tablet."
     />
     <meta property="og:url" content="https://www.melostudio.es/" />
     <meta property="og:image" content="https://www.melostudio.es/assets/social/melo-studio-social.png" />
@@ -74,8 +74,14 @@
               {
                 "@type": "ListItem",
                 "position": 5,
-                "url": "https://www.melostudio.es/#subastado",
+                "url": "https://www.melostudio.es/subastado/",
                 "name": "Subastado"
+              },
+              {
+                "@type": "ListItem",
+                "position": 6,
+                "url": "https://www.melostudio.es/#envite",
+                "name": "Envite"
               }
             ]
           },
@@ -133,10 +139,18 @@
               },
               {
                 "@type": "Question",
+                "name": "¿Cómo se juega al Subastado?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Subastado se juega con 3 jugadores y baraja española de 36 cartas sin treses. Se puja desde 60, el ganador elige triunfo y juega solo contra los otros dos hasta llegar a 500 puntos."
+                }
+              },
+              {
+                "@type": "Question",
                 "name": "¿Habrá más juegos?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "La colección seguirá creciendo con nuevos clásicos de cartas."
+                  "text": "La colección seguirá creciendo con Envite y nuevos clásicos de cartas."
                 }
               },
               {
@@ -144,7 +158,7 @@
                 "name": "¿Tenéis juegos de cartas canarios?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Sí. Melo Studio incluye juegos de cartas canarios como La Zanga y La Ronda, y prepara Subastado."
+                  "text": "Sí. Melo Studio incluye juegos de cartas canarios como La Zanga, La Ronda y Subastado, y prepara Envite."
                 }
               }
             ]
@@ -433,6 +447,10 @@
         background: linear-gradient(135deg, #331200, #8f2b00 48%, #ff8a00);
       }
 
+      .game.envite {
+        background: linear-gradient(135deg, #241006, #7a2500 48%, #c15a08);
+      }
+
       .game-content {
         max-width: 550px;
       }
@@ -461,6 +479,20 @@
         flex-wrap: wrap;
         gap: 12px;
         margin-top: 26px;
+      }
+
+      .game.subastado .game-actions {
+        display: grid;
+        grid-template-columns: repeat(3, max-content);
+        align-items: stretch;
+      }
+
+      .game.subastado .store-button {
+        min-width: 160px;
+      }
+
+      .game.subastado .button:not(.store-button) {
+        padding: 0 14px;
       }
 
       .store-button {
@@ -630,21 +662,20 @@
       }
 
       .seo {
-        background: var(--soft);
+        background:
+          linear-gradient(180deg, rgba(255, 248, 228, 0), #fff8e4 38%, rgba(255, 248, 228, 0));
       }
 
       .seo-grid {
         display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(260px, 0.72fr);
-        gap: 30px;
+        grid-template-columns: minmax(0, 0.95fr) minmax(300px, 1.05fr);
+        gap: clamp(34px, 6vw, 72px);
+        align-items: start;
       }
 
       .seo-panel,
       .faq-panel {
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        background: #ffffff;
-        padding: 28px;
+        background: transparent;
       }
 
       .seo-panel p,
@@ -658,29 +689,47 @@
         margin: 18px 0 0;
       }
 
+      .seo-kicker {
+        display: inline-flex;
+        margin-bottom: 12px;
+        color: #9b3b00;
+        font-size: 0.82rem;
+        font-weight: 900;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
       .tags {
         display: flex;
         flex-wrap: wrap;
-        gap: 8px;
-        margin-top: 20px;
+        gap: 10px;
+        margin-top: 28px;
       }
 
       .tags span {
         border-radius: 999px;
-        border: 1px solid var(--line);
-        padding: 8px 11px;
+        border: 1px solid rgba(74, 35, 7, 0.16);
+        padding: 9px 13px;
+        background: rgba(255, 255, 255, 0.62);
+        color: rgba(5, 5, 5, 0.72);
         font-size: 0.88rem;
-        font-weight: 850;
+        font-weight: 780;
       }
 
       .faq-panel {
         display: grid;
-        gap: 18px;
+        gap: 0;
+        border-top: 1px solid rgba(74, 35, 7, 0.16);
       }
 
       .faq-panel h3 {
         margin: 0 0 6px;
         font-size: 1rem;
+      }
+
+      .faq-panel article {
+        padding: 20px 0;
+        border-bottom: 1px solid rgba(74, 35, 7, 0.16);
       }
 
       .faq-panel p {
@@ -791,6 +840,11 @@
 
         .hero-actions,
         .game-actions {
+          flex-direction: column;
+        }
+
+        .game.subastado .game-actions {
+          display: flex;
           flex-direction: column;
         }
 
@@ -993,8 +1047,40 @@
             <div class="game-content">
               <h3>Subastado</h3>
               <p>
-                Próximo juego de cartas canario: subasta, triunfo, bazas y
+                Juego de cartas canario de pujas, triunfo, bazas y
                 estrategia para jugar solo contra otros dos jugadores.
+              </p>
+              <div class="game-actions">
+                <a class="button primary store-button" href="https://play.google.com/store/apps/details?id=com.melostudio.subastado&utm_source=melostudio&utm_medium=web&utm_campaign=subastado&utm_content=home" target="_blank" rel="noopener noreferrer" aria-label="Descargar Subastado en Google Play">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path fill="#00d084" d="M4 2.7v18.6l9.7-9.3L4 2.7Z" />
+                    <path fill="#00a3ff" d="m5.2 2.1 11.2 6.4-2.7 3.5L5.2 2.1Z" />
+                    <path fill="#ffd33d" d="m13.7 12 2.7 3.5L5.2 21.9 13.7 12Z" />
+                    <path fill="#ff6b00" d="m16.4 8.5 3.2 1.8c1.1.6 1.1 2 0 2.7l-3.2 1.8-2.7-2.8 2.7-3.5Z" />
+                  </svg>
+                  <span><small>Disponible en</small><strong>Google Play</strong></span>
+                </a>
+                <span class="button store-button app-store disabled" aria-disabled="true">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path fill="currentColor" d="M16.1 12.6c0-2 1.6-3 1.7-3.1-1-.1-2 .5-2.5.5-.5 0-1.3-.5-2.1-.5-1.7 0-3.3 1.4-3.3 3.6 0 1.1.4 2.3 1 3.2.5.8 1.1 1.7 1.9 1.7.7 0 1-.5 2-.5.9 0 1.2.5 2 .5.8 0 1.3-.8 1.8-1.6.6-.9.8-1.7.8-1.8 0 0-1.3-.5-1.3-2Z" />
+                    <path fill="currentColor" d="M14.7 7.8c.4-.5.7-1.2.6-1.8-.6 0-1.3.4-1.7.9-.4.5-.7 1.1-.6 1.7.6.1 1.3-.3 1.7-.8Z" />
+                  </svg>
+                  <span><small>App Store</small><strong>Próximamente</strong></span>
+                </span>
+                <a class="button" href="subastado/">Jugar al Subastado</a>
+              </div>
+            </div>
+            <div class="game-image marketing-art">
+              <img class="game-feature" src="assets/marketing/subastado-feature.webp" alt="Subastado para móvil y tablet" loading="lazy" />
+            </div>
+          </article>
+
+          <article class="game envite" id="envite">
+            <div class="game-content">
+              <h3>Envite</h3>
+              <p>
+                Próximo juego de cartas canario con envites, estrategia y
+                partidas rápidas para móvil y tablet.
               </p>
               <div class="game-actions">
                 <span class="button primary store-button disabled" aria-disabled="true">
@@ -1015,9 +1101,9 @@
                 </span>
               </div>
             </div>
-            <div class="game-image" data-suit="♠">
+            <div class="game-image" data-suit="♣">
               <span class="coming-soon">Próximamente</span>
-              <img class="game-logo" src="assets/logos/subastado-logo.webp" alt="Subastado próximamente para móvil y tablet" />
+              <img class="game-logo" src="assets/logos/envite-logo.webp" alt="Envite próximamente para móvil y tablet" loading="lazy" />
             </div>
           </article>
         </div>
@@ -1053,11 +1139,12 @@
       <section class="section seo" aria-labelledby="seo-title">
         <div class="seo-grid wrap">
           <div class="seo-panel">
+            <span class="seo-kicker">Guías y juegos</span>
             <h2 id="seo-title">Juegos de cartas canarios y clásicos para móvil y tablet</h2>
             <p>
               Si buscas juegos de cartas canarios online para móvil y tablet,
-              Melo Studio desarrolla clásicos como La Zanga, La Ronda y el próximo
-              Subastado, junto a juegos conocidos como El Cinquillo y El
+              Melo Studio desarrolla clásicos como La Zanga, La Ronda y
+              Subastado, y prepara Envite junto a juegos conocidos como El Cinquillo y El
               Solitario con partidas rápidas, rankings y salas privadas.
             </p>
             <p>
@@ -1065,7 +1152,7 @@
               descarga. Así es más fácil encontrar Cinquillo online, Zanga para
               móvil y tablet, Solitario gratis y otros juegos de cartas.
             </p>
-            <div class="tags" aria-label="Búsquedas relacionadas">
+            <div class="tags" aria-label="Temas relacionados">
               <span>juegos de cartas</span>
               <span>juegos de cartas canarios</span>
               <span>cómo se juega al cinquillo</span>
@@ -1074,8 +1161,11 @@
               <span>cinquillo online</span>
               <span>zanga online</span>
               <span>ronda online</span>
+              <span>subastado online</span>
+              <span>envite canario</span>
               <span>solitario móvil y tablet</span>
               <span>cómo se juega a la ronda</span>
+              <span>cómo se juega al subastado</span>
               <span>la ronda cartas</span>
               <span>subastado canario</span>
               <span>cartas gratis</span>
@@ -1128,15 +1218,23 @@
               </p>
             </article>
             <article>
+              <h3>&iquest;Cómo se juega al Subastado?</h3>
+              <p>
+                Subastado se juega con 3 jugadores, baraja española sin treses,
+                pujas desde 60, palo de triunfo, bazas y cantes. Consulta
+                <a href="subastado/">cómo se juega al Subastado</a>.
+              </p>
+            </article>
+            <article>
               <h3>&iquest;Habrá más juegos?</h3>
-              <p>La colección seguirá creciendo con Subastado y nuevos clásicos de cartas.</p>
+              <p>La colección seguirá creciendo con Envite y nuevos clásicos de cartas.</p>
             </article>
             <article>
               <h3>&iquest;Tenéis juegos de cartas canarios?</h3>
               <p>
                 Sí. Melo Studio incluye juegos de cartas canarios como
-                <a href="zanga/">La Zanga</a> y <a href="ronda/">La Ronda</a>,
-                y prepara Subastado.
+                <a href="zanga/">La Zanga</a>, <a href="ronda/">La Ronda</a> y
+                <a href="subastado/">Subastado</a>, y prepara Envite.
               </p>
             </article>
           </div>
