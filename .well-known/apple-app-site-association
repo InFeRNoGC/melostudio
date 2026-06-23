@@ -38,6 +38,14 @@
           "/subastado/sala/",
           "/subastado/sala"
         ]
+      },
+      {
+        "appID": "6J25UY8898.com.melostudio.chinchon",
+        "paths": [
+          "/chinchon/sala/*",
+          "/chinchon/sala/",
+          "/chinchon/sala"
+        ]
       }
     ]
   }
